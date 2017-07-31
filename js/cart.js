@@ -1,3 +1,6 @@
+Vue.filter("money",function(value,type){
+	return "￥"+value.toFixed(2)+type
+})
 new Vue({
 	el: "#app",
 	data: {
@@ -85,7 +88,4 @@ new Vue({
 			this.delFlag = false;
 		}
 	}
-})
-Vue.filter("money",function(value,type){
-	return "￥"+value.toFixed(2)+type
 })

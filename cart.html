@@ -66,12 +66,12 @@
                   <li v-for="(item,index) in productList">
                     <div class="cart-tab-1">
                       <div class="cart-item-check">
-                        <a href="javascript:void 0" class="item-check-btn" v-bind:class="{'check':item.checked}" @click="selectedProduct(item)">
+                        <a href="javascript:void 0" class="item-check-btn" :class="{'check':item.checked}" @click="selectedProduct(item)">
                           <svg class="icon icon-ok"><use xlink:href="#icon-ok"></use></svg>
                         </a>
                       </div>
                       <div class="cart-item-pic">
-                        <img v-bind:src="item.productImage" alt="烟">
+                        <img :src="item.productImage" alt="烟">
                       </div>
                       <div class="cart-item-title">
                         <div class="item-name">{{item.productName}}</div>
@@ -132,7 +132,7 @@
               </div>
               <div class="cart-foot-r">
                 <div class="item-total">
-                  Item total: <span class="total-price">{{totalMoney}}</span>
+                  Item total: <span class="total-price">{{totalMoney | money("元")}}</span>
                 </div>
                 <div class="next-btn-wrap">
                   <a href="address.html" class="btn btn--red" style="width: 200px">结账</a>
@@ -142,7 +142,7 @@
           </div>
         </div>
 
-        <div class="md-modal modal-msg md-modal-transition" id="showModal" v-bind:class="{'md-show':delFlag}">
+        <div class="md-modal modal-msg md-modal-transition" id="showModal" :class="{'md-show':delFlag}">
           <div class="md-modal-inner">
             <div class="md-top">
               <button class="md-close" @click="delFlag=false">关闭</button>
